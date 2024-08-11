@@ -1,16 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //* Import Pages
-import Home from "../components/Home";
-import Usuarios from "../components/Usuarios";
-import Productos from "../components/Productos";
-import Clientes from "../components/Clientes";
-import Actividades from "../components/Actividades";
-import Rutas from "../components/Rutas";
-import Hospedaje from "../components/Hospedaje";
+import Home from "../pages/Home/Home";
+import Usuarios from "../pages/Usuarios/Usuarios";
+import Productos from "../pages/Productos/Productos";
+import Clientes from "../pages/Clientes/Clientes";
+import Actividades from "../pages/Actividades/Actividades";
+import Rutas from "../pages/Rutas/Rutas";
+import Hospedaje from "../pages/Hospedaje/Hospedaje";
 
 //* Import Component
-import Header from "../components/Header";
+import Header from "../components/Header/Header";
 
 import "primereact/resources/themes/soho-dark/theme.css";
 import "primereact/resources/primereact.min.css";

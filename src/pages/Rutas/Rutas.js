@@ -1,7 +1,7 @@
-import "../App.css";
+import "../../App.css";
 import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/soho-dark/theme.css';
-import RutaService from "../services/RutaService";
+import RutaService from "../../services/RutaService";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import React, { Component } from "react";

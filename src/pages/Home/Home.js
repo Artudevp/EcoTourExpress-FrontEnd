@@ -1,7 +1,7 @@
 import React from 'react';
 import { Panel } from 'primereact/panel';
 import { Button } from 'primereact/button';
-import '../App.css'; 
+import '../../App.css'; 
 
 const Home = () => {
     return (

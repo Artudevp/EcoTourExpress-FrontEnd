@@ -1,9 +1,9 @@
 // src/components/Hospedaje.js
 import React, { Component } from "react";
-import "../App.css";
+import "../../App.css";
 import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/soho-dark/theme.css';
-import HospedajeService from "../services/HospedajeService";
+import HospedajeService from "../../services/HospedajeService";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Panel } from 'primereact/panel';

@@ -1,7 +1,7 @@
-import "../App.css";
+import "../../App.css";
 import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/soho-dark/theme.css';
-import ActividadService from "../services/ActividadService";
+import ActividadService from "../../services/ActividadService";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import React, { Component } from "react";
