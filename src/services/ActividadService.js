@@ -1,26 +1,31 @@
 import axios from "axios";
 
 class ActividadService {
-    baseurl = "http://localhost:8080/actividades/";
+    baseurl = "http://localhost:8080/actividades";
 
-    getAllActividades() {
-        return axios.get(this.baseurl + "todas").then(res => res.data);
+    async getAllActividades() {
+        const res = await axios.get(this.baseurl);
+        return res.data;
     }
 
-    getActividadById(id_actividad) {
-        return axios.get(this.baseurl + id_actividad).then(res => res.data);
+    async getActividadById(id_actividad) {
+        const res = await axios.get(this.baseurl + id_actividad);
+        return res.data;
     }
 
-    createActividad(actividad) {
-        return axios.post(this.baseurl + "nueva", actividad).then(res => res.data);
+    async createActividad(actividad) {
+        const res = await axios.post(this.baseurl, actividad);
+        return res.data;
     }
 
-    updateActividad(id_actividad, actividad) {
-        return axios.put(this.baseurl + "editar/" + id_actividad, actividad).then(res => res.data);
+    async updateActividad(id_actividad, actividad) {
+        const res = await axios.put(this.baseurl + id_actividad, actividad);
+        return res.data;
     }
 
-    deleteActividad(id_actividad) {
-        return axios.delete(this.baseurl + "delete/" + id_actividad).then(res => res.data);
+    async deleteActividad(id_actividad) {
+        const res = await axios.delete(this.baseurl + id_actividad);
+        return res.data;
     }
 }
 

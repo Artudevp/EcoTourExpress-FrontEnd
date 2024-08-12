@@ -4,19 +4,23 @@ import axios from "axios";
 export class ProductoService{
     baseurl = "http://localhost:8080/productos"
 
-    getAll(){
-        return axios.get(this.baseurl + "/todos").then(res => res.data)
+    async getAll(){
+        const res = await axios.get(this.baseurl);
+        return res.data;
     }
 
-    save(producto){
-        return axios.post(this.baseurl + "/nuevo", producto).then (res => res.data)
+    async save(producto){
+        const res = await axios.post(this.baseurl, producto);
+        return res.data;
     }
 
-    update(id_producto, producto) {
-        return axios.put(this.baseurl + "/editar/" + id_producto, producto).then(res => res.data);
+    async update(id_producto, producto) {
+        const res = await axios.put(`${this.baseurl}/${id_producto}`, producto);
+        return res.data;
     }
 
-    delete(id_producto){
-        return axios.post(this.baseurl + "/delete/" + id_producto).then (res => res.data)
+    async delete(id_producto){
+        const res = await axios.post(`${this.baseurl}/${id_producto}`);
+        return res.data;
     }
 }
