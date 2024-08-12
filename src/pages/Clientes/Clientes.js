@@ -1,8 +1,8 @@
 // src/components/Cliente.js
-import "../App.css";
+import "../../App.css";
 import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/soho-dark/theme.css';
-import ClienteService from "../services/ClienteService";
+import ClienteService from "../../services/ClienteService";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import React, { Component } from "react";
