@@ -1,0 +1,40 @@
+.header {
+    background-color: #333544;
+    border: 1px solid #3e4053;
+    border: 6px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px 30px;
+    margin: 0;
+    padding: 15px 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.li {
+    list-style: none;
+}
+
+.navLink {
+    color: #ffffffde;
+    text-decoration: none;
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+}
+
+.navLinkActive {
+    color: #ffffffde;
+    text-decoration: none;
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    background-color: #252631;
+    border-radius: 10px;
+    transition: .2s ease-in-out;
+}

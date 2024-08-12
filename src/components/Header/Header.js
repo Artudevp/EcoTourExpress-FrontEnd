@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import Style from "./Header.module.css";
 
 function Header() {
 	const items = [
@@ -11,15 +12,15 @@ function Header() {
 		{ label: "Hospedaje", icon: "pi pi-fw pi-map", url: "/hospedaje", id: 7 },
 	];
 	return (
-		<header style={{ backgroundColor: "#333544", border: "1px solid #3e4053", borderRadius: "6px", margin: "10px" }}>
+		<header className={Style.header}>
 			<nav>
-				<ul style={{ display: "flex", flexDirection: "row", gap: "40px", margin: "0px", padding: "20px 30px" }}>
+				<ul className={Style.ul}>
 					{
 						items.map(link => (
-							<li key={link.id} style={{ listStyle: "none" }}>
+							<li key={link.id} className={Style.li}>
 								<NavLink
 									to={link.url}
-									style={{ color: "#ffffffde", textDecoration: "none", display: "flex", gap: "8px" }}
+									className={({ isActive }) => (isActive ? Style.navLinkActive : Style.navLink)}
 								>
 									<i className={link.icon}></i>
 									{link.label}
