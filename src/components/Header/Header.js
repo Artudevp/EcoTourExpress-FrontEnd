@@ -9,7 +9,7 @@ function Header() {
 		{ label: "Clientes", icon: "pi pi-fw pi-users", url: "/clientes", id: 4 },
 		{ label: "Actividades", icon: "pi pi-fw pi-calendar", url: "/actividades", id: 5 },
 		{ label: "Rutas", icon: "pi pi-fw pi-map", url: "/rutas", id: 6 },
-		{ label: "Hospedaje", icon: "pi pi-fw pi-map", url: "/hospedaje", id: 7 },
+		{ label: "Hospedaje", icon: "pi pi-fw pi-home", url: "/hospedaje", id: 7 },
 	];
 	return (
 		<header className={Style.header}>

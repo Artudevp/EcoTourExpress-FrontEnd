@@ -3,15 +3,18 @@ import axios from 'axios';
 const API_URL = 'http://localhost:8080/clientes';
 
 class ClienteService {
+
     async getAllClientes() {
         const res = await axios.get(API_URL);
         return res.data;
+
     }
 
     async getClienteById(id) {
         const res = await axios.get(`${API_URL}/${id}`);
         return res.data;
     }
+
 
     async createCliente(cliente) {
         const res = await axios.post(API_URL, cliente);
@@ -21,6 +24,7 @@ class ClienteService {
     async updateCliente(id, cliente) {
         const res = await axios.put(`${API_URL}/${id}`, cliente);
         return res.data;
+  
     }
 
     async deleteCliente(id) {
@@ -48,12 +52,14 @@ class ClienteService {
     async addActividadCliente(id, actividad) {
         const res = await axios.post(`${API_URL}/${id}/actividades`, actividad);
         return res.data;
+
     }
 
     async removeActividadCliente(id, actividadId) {
         const res = await axios.delete(`${API_URL}/${id}/actividades/${actividadId}`);
         return res.data;
     }
+
 
     async addRutaCliente(id, ruta) {
         const res = await axios.post(`${API_URL}/${id}/rutas`, ruta);
@@ -73,13 +79,13 @@ class ClienteService {
     async removeHospedajeCliente(id, hospedajeId) {
         const res = await axios.delete(`${API_URL}/${id}/hospedaje/${hospedajeId}`);
         return res.data;
+
     }
 
-    /* 
-    removeErrores(error){
-        return axios.eliminarError(`${API_URL}/${error}/errores`);
-        //ojalá algo asi sirviera :(
-    }*/
+    // removeErrores(error){
+    //     return axios.eliminarError(`${API_URL}/${error}/errores`);
+    //     //ojalá algo asi sirviera :(
+    // }
 }
 
 const clienteService = new ClienteService();
