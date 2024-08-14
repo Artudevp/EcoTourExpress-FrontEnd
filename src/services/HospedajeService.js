@@ -3,20 +3,24 @@ import axios from 'axios';
 const API_URL = 'http://localhost:8080/hospedajes';
 
 class HospedajeService {
-    getAllHospedajes() {
-        return axios.get(`${API_URL}/todos`).then(res => res.data);
+    async getAllHospedajes() {
+        const res = await axios.get(API_URL);
+        return res.data;
     }
 
-    createHospedaje(hospedaje) {
-        return axios.post(`${API_URL}/nuevo`, hospedaje);
+    async createHospedaje(hospedaje) {
+        const res = await axios.post(API_URL, hospedaje);
+        return res.data
     }
 
-    updateHospedaje(id, hospedaje) {
-        return axios.put(`${API_URL}/editar/${id}`, hospedaje);
+    async updateHospedaje(id, hospedaje) {
+        const res = await axios.put(`${API_URL}/${id}`, hospedaje);
+        return res.data;
     }
 
-    deleteHospedaje(id) {
-        return axios.post(`${API_URL}/delete/${id}`);
+    async deleteHospedaje(id) {
+        const res = await axios.get(`${API_URL}/${id}`);
+        return res.data;
     }
 }
 

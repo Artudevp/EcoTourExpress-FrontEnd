@@ -1,31 +1,36 @@
 import axios from "axios";
 
 class RutaService {
-    baseurl = "http://localhost:8080/rutas/";
+    baseurl = "http://localhost:8080/rutas";
 
-    getAllRutas() {
-        return axios.get(this.baseurl + "todas").then(res => res.data);
+    async getAllRutas() {
+        const res = await axios.get(this.baseurl);
+        return res.data;
     }
 
-    getRutaById(id_ruta) {
-        return axios.get(this.baseurl + id_ruta).then(res => res.data);
+    async getRutaById(id_ruta) {
+        const res = await axios.get(this.baseurl + id_ruta);
+        return res.data;
     }
 
-    createRuta(ruta) {
-        return axios.post(this.baseurl + "nueva", ruta).then(res => res.data);
+    async createRuta(ruta) {
+        const res = await axios.post(this.baseurl, ruta);
+        return res.data;
     }
 
-    updateRuta(id_ruta, ruta) {
-        return axios.put(this.baseurl + "editar/" + id_ruta, ruta).then(res => res.data);
+    async updateRuta(id_ruta, ruta) {
+        const res = await axios.put(`${this.baseurl}/${id_ruta}`, ruta);
+        return res.data;
     }
 
-    deleteRuta(id_ruta) {
-        return axios.delete(this.baseurl + "delete/" + id_ruta)
-            .then(res => res.data)
-            .catch(error => {
-                console.error("Error eliminando la ruta:", error);
-                throw error;
-            });
+    async deleteRuta(id_ruta) {
+        try {
+            const res = await axios.delete(`${this.baseurl}/${id_ruta}`);
+            return res.data;
+        } catch (error) {
+            console.error("Error eliminando la ruta:", error);
+            throw error;
+        }
     }
     
 }

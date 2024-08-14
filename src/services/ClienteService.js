@@ -3,48 +3,83 @@ import axios from 'axios';
 const API_URL = 'http://localhost:8080/clientes';
 
 class ClienteService {
-    getAllClientes() {
-        return axios.get(`${API_URL}/todos`).then(res => res.data);
+
+    async getAllClientes() {
+        const res = await axios.get(API_URL);
+        return res.data;
+
     }
 
-    getClienteById(id) {
-        return axios.get(`${API_URL}/${id}`).then(res => res.data);
+    async getClienteById(id) {
+        const res = await axios.get(`${API_URL}/${id}`);
+        return res.data;
     }
 
-    createCliente(cliente) {
-        return axios.post(`${API_URL}/nuevo`, cliente);
+
+    async createCliente(cliente) {
+        const res = await axios.post(API_URL, cliente);
+        return res.data;
     }
 
-    updateCliente(id, cliente) {
-        return axios.put(`${API_URL}/editar/${id}`, cliente);
+    async updateCliente(id, cliente) {
+        const res = await axios.put(`${API_URL}/${id}`, cliente);
+        return res.data;
+  
     }
 
-    deleteCliente(id) {
-        return axios.delete(`${API_URL}/${id}`);
+    async deleteCliente(id) {
+        const res = await axios.delete(`${API_URL}/${id}`);
+        return res.data;
     }
 
-    getActividadesCliente(id) {
-        return axios.get(`${API_URL}/${id}/actividades`).then(res => res.data);
+    //hay metodos que hay que agregar en el service y el controller de la entidad java OJO
+    
+    async getActividadesCliente(id) {
+        const res = await axios.get(`${API_URL}/${id}/actividades`);
+        return res.data;
     }
 
-    addActividadesCliente(id, actividades) {
-        return axios.put(`${API_URL}/${id}/actividades`, actividades);
+    async getRutasCliente(id) {
+        const res = await axios.get(`${API_URL}/${id}/rutas`);
+        return res.data;
     }
 
-    removeActividadCliente(id, actividadId) {
-        return axios.delete(`${API_URL}/${id}/actividades/${actividadId}`);
+    async getHospedajeCliente(id) {
+        const res = await axios.get(`${API_URL}/${id}/hospedaje`);
+        return res.data;
     }
 
-    getRutasCliente(id) {
-        return axios.get(`${API_URL}/${id}/rutas`).then(res => res.data);
+    async addActividadCliente(id, actividad) {
+        const res = await axios.post(`${API_URL}/${id}/actividades`, actividad);
+        return res.data;
+
     }
 
-    addRutasCliente(id, rutas) {
-        return axios.put(`${API_URL}/${id}/rutas`, rutas);
+    async removeActividadCliente(id, actividadId) {
+        const res = await axios.delete(`${API_URL}/${id}/actividades/${actividadId}`);
+        return res.data;
     }
 
-    removeRutaCliente(id, rutaId) {
-        return axios.delete(`${API_URL}/${id}/rutas/${rutaId}`);
+
+    async addRutaCliente(id, ruta) {
+        const res = await axios.post(`${API_URL}/${id}/rutas`, ruta);
+        return res.data;
+    }
+
+    async removeRutaCliente(id, rutaId) {
+        const res = await axios.delete(`${API_URL}/${id}/rutas/${rutaId}`);
+        return res.data;
+    }
+
+    async addHospedajeCliente(id, hospedaje) {
+        const res = await axios.post(`${API_URL}/${id}/hospedaje`, hospedaje);
+        return res.data;
+    }
+
+    async removeHospedajeCliente(id, hospedajeId) {
+        const res = await axios.delete(`${API_URL}/${id}/hospedaje/${hospedajeId}`);
+        return res.data;
+
     }
 
     // removeErrores(error){
