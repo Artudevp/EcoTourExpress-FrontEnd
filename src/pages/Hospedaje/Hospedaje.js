@@ -153,7 +153,7 @@ export default class Hospedaje extends Component {
                         onSelectionChange={(e) => this.setState({ selectedHospedaje: e.value })} paginator rows={10} rowsPerPageOptions={[5, 10, 25, 50]}>
                         <Column field="id_habitacion" header="ID"></Column>
                         <Column field="tipo_hab" header="Tipo"></Column>
-                        <Column field="capacidad" header="Capacidad"></Column>
+                        <Column field="capacidad" header="Capacidad (Personas)"></Column>
                         <Column field="disponibilidad" header="Disponibilidad"></Column>
                         <Column field="precio_hab" header="Precio"></Column>
                     </DataTable>
@@ -168,7 +168,7 @@ export default class Hospedaje extends Component {
                     <br />
                     <FloatLabel>
                         <InputText style={{ width: '100%' }} value={this.state.hospedaje.capacidad} id="capacidad" onChange={this.handleChange} />
-                        <label htmlFor="capacidad">Capacidad</label>
+                        <label htmlFor="capacidad">Capacidad (Personas)</label>
                     </FloatLabel>
                     <br />
                     <FloatLabel>

@@ -149,7 +149,7 @@ export default class Actividades extends Component {
                         onSelectionChange={(e) => this.setState({ selectedActividad: e.value })} paginator rows={10} rowsPerPageOptions={[5, 10, 25, 50]}>
                         <Column field="id_actividad" header="ID"></Column>
                         <Column field="nombre_act" header="Nombre"></Column>
-                        <Column field="duración_act" header="Duración"></Column>
+                        <Column field="duración_act" header="Duración (Horas)"></Column>
                         <Column field="precio_act" header="Precio"></Column>
                     </DataTable>
                 </Panel>
@@ -163,7 +163,7 @@ export default class Actividades extends Component {
                     <br />
                     <FloatLabel>
                         <InputText style={{ width: '100%' }} value={this.state.actividad.duración_act} id="duración_act" onChange={this.handleChange} />
-                        <label htmlFor="duración_act">Duración</label>
+                        <label htmlFor="duración_act">Duración (Horas)</label>
                     </FloatLabel>
                     <br />
                     <FloatLabel>

@@ -150,7 +150,7 @@ export default class Rutas extends Component {
                         onSelectionChange={(e) => this.setState({ selectedRuta: e.value })} paginator rows={10} rowsPerPageOptions={[5, 10, 25, 50]}>
                         <Column field="id_ruta" header="ID"></Column>
                         <Column field="nombre_ruta" header="Nombre"></Column>
-                        <Column field="duración_ruta" header="Duración"></Column>
+                        <Column field="duración_ruta" header="Duración (Horas)"></Column>
                         <Column field="precio" header="Precio"></Column>
                     </DataTable>
                 </Panel>
@@ -164,7 +164,7 @@ export default class Rutas extends Component {
                     <br />
                     <FloatLabel>
                         <InputText style={{ width: '100%' }} value={this.state.ruta.duración_ruta} id="duración_ruta" onChange={this.handleChange} />
-                        <label htmlFor="duración_ruta">Duración</label>
+                        <label htmlFor="duración_ruta">Duración (Horas)</label>
                     </FloatLabel>
                     <br />
                     <FloatLabel>
